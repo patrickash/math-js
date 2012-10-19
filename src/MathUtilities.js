@@ -140,5 +140,5 @@
 	}
 
 	// Expose class
-	window.MathUtilities = window.MathUtil = MathUtilities.fn;
+	window.MathUtilities = MathUtilities.fn;
 }(window));
