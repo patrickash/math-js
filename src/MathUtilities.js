@@ -58,9 +58,23 @@
 		degreesToRadians: function(d) {
 			return (d * Math.PI) / 180;
 		},
+
+		/**
+		* Returns the sine of an angle passed in as a degree
+		* @method sinD
+		* @param (Number) a Angle, in degrees.
+		* @return (Number) Sine of angle (between 1 and -1).
+		*/
 		sinD: function(a) {
 			return Math.sin(a * (Math.PI / 180));
 		},
+
+		/**
+		* Returns the cosine of an angle passed in as a degree
+		* @method cosD
+		* @param (Number) a Angle, in degrees.
+		* @return (Number) Cosine of angle (between 1 and -1).
+		*/
 		cosD: function(a) {
 			return Math.cos(a * (Math.PI / 180));
 		},
