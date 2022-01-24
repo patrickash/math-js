@@ -46,6 +46,7 @@ export default class MathUtilities {
 
   /**
    * Return the tangent of an angle passed
+   * @method tanD
    * @param {Number} a
    * @returns {Number} Tangent of angle
    */
