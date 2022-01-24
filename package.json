@@ -1,0 +1,25 @@
+{
+  "name": "math-utilities",
+  "version": "1.0.0",
+  "description": "MathUtilities =============",
+  "main": "index.js",
+  "scripts": {
+    "test": "http-server ./ -o ./example/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patrickash/math-utilities.git"
+  },
+  "author": "Patrick Ashamalla",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/patrickash/math-utilities/issues"
+  },
+  "homepage": "https://github.com/patrickash/math-utilities#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.12",
+    "@babel/node": "^7.16.8",
+    "http-server": "^14.1.0"
+  }
+}
