@@ -28,7 +28,7 @@ export default class MathUtilities {
    * Returns the sine of an angle passed in as a degree
    * @method sinD
    * @param {Number} a Angle, in degrees.
-   * @returns Sine of angle (between 1 and -1).
+   * @returns {Number} Sine of angle (between 1 and -1).
    */
   static sinD (a) {
     return Math.sin(a * (Math.PI / 180));
@@ -38,12 +38,17 @@ export default class MathUtilities {
    * Returns the cosine of an angle passed in as a degree
    * @method cosD
    * @param {Number} a Angle, in degrees.
-   * @returns Cosine of angle (between 1 and -1).
+   * @returns {Number} Cosine of angle (between 1 and -1).
    */
   static cosD (a) {
     return Math.cos(a * (Math.PI / 180));
   }
 
+  /**
+   * Return the tangent of an angle passed
+   * @param {Number} a
+   * @returns {Number} Tangent of angle
+   */
   static tanD (a) {
     return Math.tan(a * (Math.PI / 180));
   }
