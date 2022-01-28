@@ -54,10 +54,24 @@ export default class MathUtilities {
     return Math.tan(a * (Math.PI / 180));
   }
 
+  /**
+   * Return the arctangent of the y,x coordinate passed
+   * @param {Number} y
+   * @param {Number} x
+   * @returns Arctangent of y,x
+   */
   static atan2D (y,x) {
     return Math.atan2(y, x) * (180 / Math.PI);
   }
 
+  /**
+   * Return the angle of the line connecting two points
+   * @param {Number} x1
+   * @param {Number} y1
+   * @param {Number} x2
+   * @param {Number} y2
+   * @returns Angle of the line connecting the two points passed.
+   */
   static angleOfLine (x1, y1, x2, y2) {
     return this.atan2D(y2 - y1, x2 - x1);
   }
@@ -90,6 +104,11 @@ export default class MathUtilities {
     return {x:x, y:y};
   }
 
+  /**
+   * Return the mean value of the array of numbers passed
+   * @param {Array} a
+   * @returns Return mean value of a set of numbers.
+   */
   static mean (a) {
     var m = 0, len = a.length, i;
 
@@ -100,6 +119,11 @@ export default class MathUtilities {
     return m / len;
   }
 
+  /**
+   * Return mediam value of the array of numbers passed
+   * @param {Array} a
+   * @returns Return median value of a set of numbers.
+   */
   static median (a) {
     var len = a.length;
 
@@ -115,6 +139,11 @@ export default class MathUtilities {
     }
   }
 
+  /**
+   * Return the range between the min and max numbers in an array
+   * @param {Array} a
+   * @returns Returns the max range found in a set of numbers.
+   */
   static range (a) {
     a.sort();
     return a[a.length - 1] - a[0];
