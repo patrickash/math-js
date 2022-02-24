@@ -51,7 +51,7 @@ export default class MathUtilities {
    * @returns {Number} Tangent of angle
    */
   static tanD (a) {
-    return Math.tan(a * (Math.PI / 180));
+    return a === 45 ? 1 : a === 135 ? -1 : Math.tan(a * (Math.PI / 180));
   }
 
   /**
@@ -60,7 +60,7 @@ export default class MathUtilities {
    * @param {Number} x
    * @returns Arctangent of y,x
    */
-  static atan2D (y,x) {
+  static atan2D (y, x) {
     return Math.atan2(y, x) * (180 / Math.PI);
   }
 
@@ -76,29 +76,54 @@ export default class MathUtilities {
     return this.atan2D(y2 - y1, x2 - x1);
   }
 
+  /**
+   * Returns angle equal to ratio of opposite side and hypotenuse
+   * @param {Number} r
+   * @returns Angle in degrees
+   */
   static asinD (r) {
     return Math.asin(r) * (180 / Math.PI);
   }
 
+  /**
+   * Returns angle equal to ratio of adjacent side and hypotenuse
+   * @param {Number} r
+   * @returns Angle in degrees
+   */
   static acosD (r) {
     return Math.acos(r) * (180 / Math.PI);
   }
 
+  /**
+   * Normalizes angle between 0 and 360 degrees
+   * @param {Number} a
+   * @returns Angle in degrees
+   */
   static fixAngle (a) {
     a %= 360;
 
     return (a < 0) ? a + 360 : a;
   }
 
+  /**
+   * Converts cartisian coordinates to polar coordinates
+   * @param {Object} p
+   * @returns Object (radius r and angle t)
+   */
   static cartisianToPolar (p) {
-    var r = Math.sqrt(p.x * p.x + p.y * p.y),
+    let r = Math.sqrt(p.x * p.x + p.y * p.y),
       t = this.atan2D(p.y, p.x);
 
     return {r:r, t:t};
   }
 
+  /**
+   * Coverts polar coordinates to cartisian coordinates
+   * @param {Object} p
+   * @returns Object (x,y)
+   */
   static polarToCartisian (p) {
-    var x = p.r * this.cosD(p.t),
+    let x = p.r * this.cosD(p.t),
       y = p.r * this.sinD(p.t);
 
     return {x:x, y:y};
@@ -106,14 +131,14 @@ export default class MathUtilities {
 
   /**
    * Return the mean value of the array of numbers passed
-   * @param {Array} a
+   * @param {Array} arr
    * @returns Return mean value of a set of numbers.
    */
-  static mean (a) {
-    var m = 0, len = a.length, i;
+  static mean (arr) {
+    let m = 0, len = arr.length, i;
 
-    for (i = a.length; --i > -1;) {
-      m = a[i] + m;
+    for (i = arr.length; --i > -1;) {
+      m = arr[i] + m;
     }
 
     return m / len;
@@ -121,32 +146,38 @@ export default class MathUtilities {
 
   /**
    * Return mediam value of the array of numbers passed
-   * @param {Array} a
+   * @param {Array} arr
    * @returns Return median value of a set of numbers.
    */
-  static median (a) {
-    var len = a.length;
+  static median (arr) {
+    let len = arr.length;
 
-    a.sort();
+    arr.sort( (a, b) => {
+      return a - b
+    });
+
     if (len === 0) return 0;
 
-    if (len === 1) return a[0];
+    if (len === 1) return arr[0];
 
     if (len%2 === 1) {
-      return a[Math.floor(len * .5)];
+      return arr[Math.floor(len * .5)];
     } else {
-      return this.mean([a[(len * .5) - 1], a[len * .5]]);
+      return this.mean([arr[(len * .5) - 1], arr[len * .5]]);
     }
   }
 
   /**
    * Return the range between the min and max numbers in an array
-   * @param {Array} a
+   * @param {Array} arr
    * @returns Returns the max range found in a set of numbers.
    */
-  static range (a) {
-    a.sort();
-    return a[a.length - 1] - a[0];
+  static range (arr) {
+    arr.sort( (a, b) => {
+      return a - b
+    });
+
+    return arr[arr.length - 1] - arr[0];
   }
 
 }
