@@ -1,7 +1,7 @@
 export default class MathUtilities {
 
 	constructor () {
-		this.VERSION = "2.0.1";
+		this.VERSION = "2.5.2";
 	}
 
 	/**
@@ -106,27 +106,29 @@ export default class MathUtilities {
   }
 
   /**
-   * Converts cartisian coordinates to polar coordinates
+   * Converts cartisian coordinates {x, y} to polar coordinates
    * @param {Object} p
-   * @returns Object (radius r and angle t)
+   * @returns Object {r, t}
    */
   static cartisianToPolar (p) {
-    let r = Math.sqrt(p.x * p.x + p.y * p.y),
-      t = this.atan2D(p.y, p.x);
+    let { x: x, y: y } = p,
+        r = Math.sqrt(x * x + y * y),
+        t = this.atan2D(y, x);
 
     return {r:r, t:t};
   }
 
   /**
-   * Coverts polar coordinates to cartisian coordinates
+   * Coverts polar coordinates {r, t} to cartisian coordinates
    * @param {Object} p
-   * @returns Object (x,y)
+   * @returns Object {x, y}
    */
   static polarToCartisian (p) {
-    let x = p.r * this.cosD(p.t),
-      y = p.r * this.sinD(p.t);
+    let { r: r, t: t } = p,
+        x = r * this.cosD(t),
+        y = r * this.sinD(t);
 
-    return {x:x, y:y};
+    return { x: x, y: y };
   }
 
   /**
