@@ -1,7 +1,7 @@
 export default class MathUtilities {
 
 	constructor () {
-		this.VERSION = "1.0";
+		this.VERSION = "2.0.1";
 	}
 
 	/**
@@ -181,3 +181,18 @@ export default class MathUtilities {
   }
 
 }
+
+export const radiansToDegrees   = MathUtilities.radiansToDegrees;
+export const degreesToRadians   = MathUtilities.degreesToRadians;
+export const sinD               = MathUtilities.sinD;
+export const cosD               = MathUtilities.cosD;
+export const tanD               = MathUtilities.tanD;
+export const atan2D             = MathUtilities.atan2D;
+export const angleOfLine        = MathUtilities.angleOfLine;
+export const asinD              = MathUtilities.asinD;
+export const acosD              = MathUtilities.acosD;
+export const fixAngle           = MathUtilities.fixAngle;
+export const cartisianToPolar   = MathUtilities.cartisianToPolar;
+export const mean               = MathUtilities.mean;
+export const median             = MathUtilities.median;
+export const range              = MathUtilities.range;
