@@ -170,6 +170,29 @@ export default class MathUtilities {
   }
 
   /**
+   * Return the mode of the array of numbers passed
+   * @param {Array} arr
+   * @returns Return the mode of a set of numbers.
+  */
+  static mode (arr) {
+    const occurrences = {};
+    let maxCount = 0;
+    let modes = [];
+
+    for (const n of arr) {
+      occurrences[n] = (occurrences[n] || 0) + 1;
+      if (occurrences[n] > maxCount) {
+        maxCount = occurrences[n];
+        modes = [n];
+      } else if (occurrences[n] === maxCount) {
+        modes.push(n);
+      }
+    }
+
+    return modes;
+  }
+
+  /**
    * Return the range between the min and max numbers in an array
    * @param {Array} arr
    * @returns Returns the max range found in a set of numbers.

@@ -120,6 +120,38 @@ describe('MathUtilities', () => {
     expect(MathUtilities.median(arr)).toBe(78);
   });
 
+  // mode - return array of most frequent numbers in the array
+  test('mode() [1, 2, 3, 2, 4, 3, 5] returns [2, 3]', () => {
+    let arr = [
+      1,
+      2,
+      3,
+      2,
+      4,
+      3,
+      5
+    ];
+    expect(MathUtilities.mode(arr)).toStrictEqual([2, 3]);
+  });
+
+  // mode - should return an empty array
+  test('mode() [] returns []', () => {
+    let arr = [];
+    expect(MathUtilities.mode(arr)).toEqual([]);
+  });
+
+  // mode - should return an empty with 1 element if all numbers occur once
+  test('mode() [1,2,3,4,5,6] returns [1,2,3,4,5,6]', () => {
+    let arr = [1,2,3,4,5,6];
+    expect(MathUtilities.mode(arr)).toStrictEqual(arr);
+  });
+
+  // mode - should handle negative numbers and 0
+  test('mode() [] returns []', () => {
+    let arr = [1, 2, 3, 0, -1, -1, -1, 0, 0];
+    expect(MathUtilities.mode(arr)).toStrictEqual([-1, 0]);
+  });
+
   // range
   test('range() [11,4,93,234,63,241] returns 237', () => {
     let arr = [

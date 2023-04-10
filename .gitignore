@@ -17,4 +17,6 @@ lerna-debug.log*
 dist
 dev
 
+node_modules
+
 db.json
