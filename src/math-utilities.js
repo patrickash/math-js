@@ -207,6 +207,7 @@ export default class MathUtilities {
 
 }
 
+
 export const radiansToDegrees   = MathUtilities.radiansToDegrees;
 export const degreesToRadians   = MathUtilities.degreesToRadians;
 export const sinD               = MathUtilities.sinD;
@@ -220,4 +221,5 @@ export const fixAngle           = MathUtilities.fixAngle;
 export const cartisianToPolar   = MathUtilities.cartisianToPolar;
 export const mean               = MathUtilities.mean;
 export const median             = MathUtilities.median;
+export const mode               = MathUtilities.mode;
 export const range              = MathUtilities.range;
