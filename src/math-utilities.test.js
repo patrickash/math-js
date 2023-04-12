@@ -96,41 +96,24 @@ describe('MathUtilities', () => {
 
   // mean
   test('mean() [11,4,93,234,63,249] returns 109', () => {
-    let arr = [
-      11,
-      4,
-      93,
-      234,
-      63,
-      249
-    ];
+    let arr = [ 11, 4, 93, 234, 63, 249 ];
     expect(MathUtilities.mean(arr)).toBe(109);
   });
 
   // median
   test('median() [11,4,93,234,63,241] returns 78', () => {
-    let arr = [
-      11,
-      4,
-      93,
-      234,
-      63,
-      241
-    ];
+    let arr = [ 11, 4, 93, 234, 63, 241 ];
     expect(MathUtilities.median(arr)).toBe(78);
+  });
+
+  test('median() [11,4,93,234,63,241,-100] returns 63', () => {
+    let arr = [ 11, 4, 93, 234, 63, 241, -100 ];
+    expect(MathUtilities.median(arr)).toBe(63);
   });
 
   // mode - return array of most frequent numbers in the array
   test('mode() [1, 2, 3, 2, 4, 3, 5] returns [2, 3]', () => {
-    let arr = [
-      1,
-      2,
-      3,
-      2,
-      4,
-      3,
-      5
-    ];
+    let arr = [1, 2, 3, 2, 4, 3, 5];
     expect(MathUtilities.mode(arr)).toStrictEqual([2, 3]);
   });
 
