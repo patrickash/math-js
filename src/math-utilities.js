@@ -1,14 +1,30 @@
 export default class MathUtilities {
 
+  static #VERSION = '3.0.0';
+
 	constructor () {
-		this.VERSION = "2.5.2";
-	}
+    throw new Error('MathUtilities is a static class and cannot be instantiated.');
+  }
+
+  /**
+   * Returns the version of the MathUtilities class.
+   * @method VERSION
+   * @returns {String} Version of the MathUtilities class.
+   * @readonly
+   * @public
+   * @since 3.0.0
+   */
+  static get VERSION () {
+    return this.#VERSION;
+  }
 
 	/**
 	 * Takes a radian value and returns its equivalent in degrees.
 	 * @method radiansToDegrees
 	 * @param {Number} r Radian value to convert
 	 * @returns {Number} Degree equivalent of the radian value.
+   * @static
+   * @public
 	 */
 	static radiansToDegrees (r) {
 		return (r * 180) / Math.PI;

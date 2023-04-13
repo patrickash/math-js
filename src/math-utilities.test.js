@@ -2,6 +2,10 @@ import MathUtilities from "./math-utilities";
 
 describe('MathUtilities', () => {
 
+  test('should have a VERSION property', () => {
+    expect(MathUtilities.VERSION).toBeDefined();
+  });
+
   // radiansToDegrees
   test('radiansToDegrees() PI radians returns 180 deg ', () => {
     expect(MathUtilities.radiansToDegrees(Math.PI)).toBe(180);
